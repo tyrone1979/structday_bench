@@ -4,6 +4,10 @@ Public benchmark artifact for **structure-conditioned, fixed-portion, multi-day 
 
 **Intended venue path:** preprint (arXiv / TechRxiv) → **IEEE Access** (benchmark / comparative study; **no new algorithm**).
 
+## Not the TEVC RCFA survey
+
+Do **not** confuse this repo with [NutriOpt-Bench / nutri-range-opt-survey](https://github.com/tyrone1979/nutri-range-opt-survey/) (IEEE TEVC experimental survey on range-constrained food assembly). That project uses equal evaluation budgets and reports FHR / Friedman / Kendall τ on single-assembly interval boxes. MealRec-Bench instead freezes **multi-day wall-clock** delivery, structure envelopes, and delivered/all-band metrics. Claims and protocols are kept disjoint on purpose.
+
 ## What this repository contains
 
 | Path | Content |
