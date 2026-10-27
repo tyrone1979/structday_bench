@@ -1,41 +1,62 @@
-\documentclass[journal]{IEEEtran}
-% Preprint / draft formatting. Before IEEE Access submission, switch to the
-% official ieeeaccess class from the IEEE Template Selector (see TEMPLATE_NOTES.md).
+\documentclass{ieeeaccess}
+\usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
-\usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{booktabs}
 \usepackage{url}
-\usepackage{hyperref}
-\usepackage{multirow}
-\usepackage{xcolor}
-\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{bm}
+\makeatletter
+\AtBeginDocument{\DeclareMathVersion{bold}
+\SetSymbolFont{operators}{bold}{T1}{times}{b}{n}
+\SetSymbolFont{NewLetters}{bold}{T1}{times}{b}{it}
+\SetMathAlphabet{\mathrm}{bold}{T1}{times}{b}{n}
+\SetMathAlphabet{\mathit}{bold}{T1}{times}{b}{it}
+\SetMathAlphabet{\mathbf}{bold}{T1}{times}{b}{n}
+\SetMathAlphabet{\mathtt}{bold}{OT1}{pcr}{b}{n}
+\SetSymbolFont{symbols}{bold}{OMS}{cmsy}{b}{n}
+\renewcommand\boldmath{\@nomath\boldmath\mathversion{bold}}}
+\makeatother
 
 \begin{document}
+\history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
+\doi{10.1109/ACCESS.2026.0000000}
+
 \title{StructDay-Bench: A Protocol and Comparative Study for Structure-Conditioned Multi-Day Dietary Optimization from NHANES}
+\author{\uppercase{Lei Zhao}\authorrefmark{1},
+\uppercase{Jing Lu}\authorrefmark{1},
+\uppercase{Yao Wu}\authorrefmark{2},
+\uppercase{Xinning Liu}\authorrefmark{2},
+\uppercase{Li Han}\authorrefmark{2},
+\uppercase{Ling Kang}\authorrefmark{1},
+\uppercase{Quan Guo}\authorrefmark{1},
+AND \uppercase{Fujin Huang}\authorrefmark{3}}
 
-\author{Lei~Zhao%
-\thanks{L.~Zhao and J.~Lu contributed equally.}%
-\thanks{Corresponding authors: L.~Kang (kangling@neusoft.edu.cn), Q.~Guo (guoquan@neusoft.edu.cn).}%
-, Jing~Lu, Yao~Wu, Xinning~Liu, Li~Han, Ling~Kang, Quan~Guo, and Fujin~Huang%
-\thanks{L.~Zhao, J.~Lu, L.~Kang, and Q.~Guo are with Dalian Neusoft University of Information, Dalian, China.}%
-\thanks{Y.~Wu, X.~Liu, and L.~Han are with the School of Software, Dalian Neusoft University of Information, Dalian, China.}%
-\thanks{F.~Huang is with Dalian Scientific Test and Control Technology Institute, Dalian, China.}}
+\address[1]{Dalian Neusoft University of Information, Dalian, China}
+\address[2]{School of Software, Dalian Neusoft University of Information, Dalian, China}
+\address[3]{Dalian Scientific Test and Control Technology Institute, Dalian, China}
+\tfootnote{L.~Zhao and J.~Lu contributed equally to this work.}
 
-\markboth{IEEE Access (preprint draft)}%
-{Zhao \MakeLowercase{\textit{et al.}}: StructDay-Bench}
+\markboth
+{Zhao \headeretal: StructDay-Bench}
+{Zhao \headeretal: StructDay-Bench}
 
-\maketitle
+\corresp{Corresponding authors: Ling Kang (e-mail: kangling@neusoft.edu.cn); Quan Guo (e-mail: guoquan@neusoft.edu.cn).}
 
 \begin{abstract}
-Personalized multi-day meal planning can be cast as constrained combinatorial optimization over fixed food portions: nutrient intervals must be met, meal occasions must remain plausible, and food identities should not repeat across successive days under a short wall-clock budget. Progress is hard to compare when each study redraws instances, alters budgets, or introduces a new solver together with a new problem definition. This paper contributes a \emph{benchmark and protocol}, not a new algorithm. We document how public NHANES individual-food recalls and linked FNDDS identifiers are transformed into optimization inputs---adult food-only cohorts, personalized nutrient intervals, demographic meal--category envelopes, and frozen candidate pools. We then freeze a confirmatory evaluation protocol (\texttt{external\_main\_v1}): twelve previously unexamined structure$\times$target units stratified by four prior difficulty labels, three seeds, 210\,s task and 30\,s per-day caps, seven-day horizon, and failure-retaining scoring. Ten existing search configurations---Aging-SMS, SMS-EMOA, AGE-MOEA/II, NSGA-II/III, R2HCA, scalar GA, generation- and wall-clock-aware RVEA adapters, and a CP-SAT band baseline---are compared on the same pools. Under the primary wall-clock-fair ledger, Aging-SMS delivers 212 days (148 all-band) across 36 tasks, while generation-fraction RVEA reaches 215/120 and a wall-clock APD RVEA adapter 204/113; CP-SAT-Band trails at 88/78. The resource is intended for preprint release and subsequent IEEE Access submission as a reproducible comparative study.
+Personalized multi-day meal planning can be cast as constrained combinatorial optimization over fixed food portions: nutrient intervals must be met, meal occasions must remain plausible, and food identities should not repeat across successive days under a short wall-clock budget. Progress is hard to compare when each study redraws instances, alters budgets, or introduces a new solver together with a new problem definition. This paper contributes a benchmark and protocol, not a new algorithm. We document how public NHANES individual-food recalls and linked FNDDS identifiers are transformed into optimization inputs---adult food-only cohorts, personalized nutrient intervals, demographic meal--category envelopes, and frozen candidate pools. We then freeze a confirmatory evaluation protocol (\texttt{external\_main\_v1}): twelve previously unexamined structure$\times$target units stratified by four prior difficulty labels, three seeds, 210\,s task and 30\,s per-day caps, seven-day horizon, and failure-retaining scoring. Ten existing search configurations---Aging-SMS, SMS-EMOA, AGE-MOEA/II, NSGA-II/III, R2HCA, scalar GA, generation- and wall-clock-aware RVEA adapters, and a CP-SAT band baseline---are compared on the same pools. Under the primary wall-clock-fair ledger, Aging-SMS delivers 212 days (148 all-band) across 36 tasks, while generation-fraction RVEA reaches 215/120 and a wall-clock APD RVEA adapter 204/113; CP-SAT-Band trails at 88/78. The resource is intended for preprint release and subsequent IEEE Access submission as a reproducible comparative study.
 \end{abstract}
 
-\begin{IEEEkeywords}
-Dietary optimization, NHANES, benchmark, multi-objective evolutionary algorithms, evaluation protocol, meal structure, reproducibility.
-\end{IEEEkeywords}
+\begin{keywords}
+Benchmark, dietary optimization, evaluation protocol, meal structure, multi-objective evolutionary algorithms, NHANES, reproducibility.
+\end{keywords}
+
+\titlepgskip=-21pt
+\maketitle
 
 \section{Introduction}
-\IEEEPARstart{D}{iet} composition is one of the earliest applied optimization problems~\cite{stigler1945}. Modern extensions incorporate acceptability, sustainability, and operational menu constraints~\cite{dooren2018,gazan2018,seljak2009,benvenuti2020}. When the decision variables are fixed-portion foods drawn from dietary surveillance, the task becomes a large binary selection problem with layered constraints: closed nutrient intervals, meal-slot legality, daily mass caps, and sequential exclusion of previously used food identities.
+\label{sec:introduction}
+\PARstart{D}{iet} composition is one of the earliest applied optimization problems~\cite{stigler1945}. Modern extensions incorporate acceptability, sustainability, and operational menu constraints~\cite{dooren2018,gazan2018,seljak2009,benvenuti2020}. When the decision variables are fixed-portion foods drawn from dietary surveillance, the task becomes a large binary selection problem with layered constraints: closed nutrient intervals, meal-slot legality, daily mass caps, and sequential exclusion of previously used food identities.
 
 Population recalls from the National Health and Nutrition Examination Survey (NHANES), linked through the Food and Nutrient Database for Dietary Studies (FNDDS)~\cite{cdcDietary,usdaFndds}, supply empirical meal organization. Such data describe reported intake; they do not certify clinical optimality. Nonetheless, demographic meal$\times$category envelopes provide a transparent internal conformity criterion that can be shared across solvers.
 
@@ -47,8 +68,8 @@ IEEE Access regularly publishes dataset- and protocol-centric contributions that
 \end{enumerate}
 We deliberately exclude method papers that introduce new search operators from the claim of this manuscript; those belong in separate venues.
 
-\paragraph{Relation to NutriOpt-Bench / RCFA.}
-A separate experimental survey (NutriOpt-Bench) studies \emph{range-constrained food assembly} under equal evaluation budgets, with Feasible Hit Rate, Friedman ranks, and Kendall~$\tau$ across scale/sparsity/dimension axes. That work targets evolutionary-computation methodology on single-assembly interval boxes. StructDay-Bench is complementary and non-substitutable: it freezes multi-day sequential delivery under wall-clock caps, demographic meal$\times$category envelopes, food-identity nonrepetition across days, and delivery/all-band outcomes. We do not reuse RCFA FHR protocols, recipe-ceiling regimes, or cross-regime $\tau$ claims here.
+\subsection{Relation to NutriOpt-Bench / RCFA}
+A separate experimental survey (NutriOpt-Bench) studies range-constrained food assembly under equal evaluation budgets, with Feasible Hit Rate, Friedman ranks, and Kendall~$\tau$ across scale/sparsity/dimension axes. That work targets evolutionary-computation methodology on single-assembly interval boxes. StructDay-Bench is complementary and non-substitutable: it freezes multi-day sequential delivery under wall-clock caps, demographic meal$\times$category envelopes, food-identity nonrepetition across days, and delivery/all-band outcomes. We do not reuse RCFA FHR protocols, recipe-ceiling regimes, or cross-regime $\tau$ claims here.
 
 \section{Related Work}
 Mathematical programming reviews summarize nutrient-only and multi-criteria diet models~\cite{dooren2018,gazan2018}. Menu systems add operational constraints~\cite{seljak2009,benvenuti2020,sahin2024}. Evolutionary multi-objective algorithms---NSGA-II~\cite{deb2002}, NSGA-III~\cite{nsga3}, RVEA~\cite{rvea}, SMS-EMOA~\cite{sms2007}, AGE-MOEA variants~\cite{age1,age2}, and aging-based SMS adaptations~\cite{aging2025}---provide complementary selection pressures. Fair metaheuristic comparison itself is an active topic~\cite{metaheuristics2021}. Benchmark-style Access papers emphasize shared data, metrics, and baselines~\cite{dales2021,cduie2023,nasbenchnlp2022}. Our setting differs through fixed-portion binary genotypes, sequential food-ID bans, and wall-clock multi-day delivery rather than offline hypervolume on synthetic fronts or equal-evaluation FHR surveys of single-day interval assembly.
@@ -86,7 +107,7 @@ Across days within a task, accepted food identities (and configured FNDDS famili
 Sampling seed 2026102612 excludes 150 previously exposed canonical identities (7831 eligible). Three units are drawn in each of four prior difficulty labels, yielding twelve structure$\times$target instances (Table~\ref{tab:panel}). Seeds $\{0,1,2\}$ produce 36 tasks per method. Budgets: 210\,s task wall clock, 30\,s per day, horizon seven days, population 200 for population-based adapters, shared top-eight observation mode.
 
 \begin{table}[!t]
-\caption{Confirmatory panel units (full IDs in \texttt{protocol/confirmatory\_panel\_selection.json}).}
+\caption{Confirmatory panel units (full IDs in repository \texttt{protocol/}).}
 \label{tab:panel}
 \centering
 \scriptsize
@@ -118,7 +139,7 @@ All methods share pools, repairs, validation, and deadlines. Compared adapters: 
 Table~\ref{tab:totals} aggregates delivered and all-band days over 36 tasks. Under wall-clock-fair reading, Aging-SMS (212/148) dominates wall-clock RVEA (204/113) and the remaining evolutionary adapters on the joint (days, all-band) profile, while generation-fraction RVEA posts the highest raw day count (215) with weaker envelope conformity (120). CP-SAT-Band returns substantially fewer days (88/78), indicating that band-focused exact search alone is insufficient under the sequential multi-day budget. Program errors were zero for listed methods on this panel.
 
 \begin{table}[!t]
-\caption{Aggregate outcomes on the confirmatory panel (36 tasks each). Higher is better. BELEX and other new operators are excluded from this benchmark ledger.}
+\caption{Aggregate outcomes on the confirmatory panel (36 tasks each). Higher is better. New search operators are excluded from this benchmark ledger.}
 \label{tab:totals}
 \centering
 \begin{tabular}{@{}lrrr@{}}
@@ -146,10 +167,10 @@ Difficulty-stratified patterns (Aging-SMS) show near-ceiling easy/hard day deliv
 A shared protocol changes the interpretation of ``better.'' Day count alone favours generation-fraction RVEA; envelope conformity and wall-clock APD reverse that conclusion relative to Aging-SMS. Benchmark users should therefore publish both delivered and all-band totals, declare APD schedules, and retain failures. Limitations include: no human palatability ratings; no external diet-quality index as a hard gate; structure$\times$target sampling rather than respondent-level hold-out; and adapters that are batch implementations of literature methods, not byte-identical reference codes. Clinical suitability is not claimed~\cite{cdcEthics}.
 
 \section{Conclusion}
-StructDay-Bench documents an NHANES-to-instance pipeline, freezes a confirmatory multi-day protocol, and compares existing algorithms under identical pools and budgets. Aging-SMS is a strong wall-clock baseline on the released panel; fair RVEA accounting matters. We release the manuscript, protocol JSON, and aggregate tables for preprint posting, with IEEE Access submission planned after official template packaging and public code linkage.
+StructDay-Bench documents an NHANES-to-instance pipeline, freezes a confirmatory multi-day protocol, and compares existing algorithms under identical pools and budgets. Aging-SMS is a strong wall-clock baseline on the released panel; fair RVEA accounting matters. We release the manuscript, protocol JSON, and aggregate tables for preprint posting and IEEE Access submission.
 
 \section*{Data and Code Availability}
-NHANES/FNDDS raw files must be obtained from NCHS/USDA. Protocol JSON, panel selection, and aggregate CSVs accompany this repository. Runtime extraction for public release is staged separately. Generated aggregates: CC~BY~4.0.
+NHANES/FNDDS raw files must be obtained from NCHS/USDA. Protocol JSON, panel selection, and aggregate CSVs accompany this repository. Runtime extraction for public release is staged separately. Generated aggregates: CC~BY~4.0. Public GitHub: \url{https://github.com/tyrone1979/structday_bench}.
 
 \section*{Acknowledgments}
 The authors thank NHANES participants and NCHS staff. Assistive tools (ChatGPT/Codex, Cursor) supported drafting and engineering; human authors remain responsible for analyses and text.
@@ -177,29 +198,30 @@ The authors thank NHANES participants and NCHS staff. Assistive tools (ChatGPT/C
 \bibitem{sahin2024} Open-source multi-objective menu planning software, \emph{SoftwareX}, 2024.
 \end{thebibliography}
 
-\begin{IEEEbiography}{Lei Zhao}
-is with Dalian Neusoft University of Information. Research interests include evolutionary optimization and computational nutrition.
-\end{IEEEbiography}
-\begin{IEEEbiography}{Jing Lu}
-is with Dalian Neusoft University of Information.
-\end{IEEEbiography}
-\begin{IEEEbiography}{Yao Wu}
-is with the School of Software, Dalian Neusoft University of Information.
-\end{IEEEbiography}
-\begin{IEEEbiography}{Xinning Liu}
-is with the School of Software, Dalian Neusoft University of Information.
-\end{IEEEbiography}
-\begin{IEEEbiography}{Li Han}
-is with the School of Software, Dalian Neusoft University of Information.
-\end{IEEEbiography}
-\begin{IEEEbiography}{Ling Kang}
-is with Dalian Neusoft University of Information.
-\end{IEEEbiography}
-\begin{IEEEbiography}{Quan Guo}
-is with Dalian Neusoft University of Information.
-\end{IEEEbiography}
-\begin{IEEEbiography}{Fujin Huang}
-is with Dalian Scientific Test and Control Technology Institute.
-\end{IEEEbiography}
+\begin{IEEEbiographynophoto}{Lei Zhao}
+is with Dalian Neusoft University of Information, Dalian, China. His research interests include evolutionary optimization and computational nutrition.
+\end{IEEEbiographynophoto}
+\begin{IEEEbiographynophoto}{Jing Lu}
+is with Dalian Neusoft University of Information, Dalian, China.
+\end{IEEEbiographynophoto}
+\begin{IEEEbiographynophoto}{Yao Wu}
+is with the School of Software, Dalian Neusoft University of Information, Dalian, China.
+\end{IEEEbiographynophoto}
+\begin{IEEEbiographynophoto}{Xinning Liu}
+is with the School of Software, Dalian Neusoft University of Information, Dalian, China.
+\end{IEEEbiographynophoto}
+\begin{IEEEbiographynophoto}{Li Han}
+is with the School of Software, Dalian Neusoft University of Information, Dalian, China.
+\end{IEEEbiographynophoto}
+\begin{IEEEbiographynophoto}{Ling Kang}
+is with Dalian Neusoft University of Information, Dalian, China.
+\end{IEEEbiographynophoto}
+\begin{IEEEbiographynophoto}{Quan Guo}
+is with Dalian Neusoft University of Information, Dalian, China.
+\end{IEEEbiographynophoto}
+\begin{IEEEbiographynophoto}{Fujin Huang}
+is with Dalian Scientific Test and Control Technology Institute, Dalian, China.
+\end{IEEEbiographynophoto}
 
+\EOD
 \end{document}

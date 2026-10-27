@@ -13,3 +13,9 @@ __pycache__/
 .venv/
 *.pyc
 access_official/
+# local build
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.pdf
+access_official/
