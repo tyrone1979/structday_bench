@@ -1,0 +1,13 @@
+instance_id,difficulty,structure_key
+fbebc1d1bc5c13e8,easy,Male|normal (18.5–24.9)|51–70
+fca20e2969a39437,easy,Male|obesity (≥30)|31–50
+3c690b1c40609141,easy,Male|overweight (25–29.9)|71+
+1fee2001494e90de,medium,Female|obesity (≥30)|71+
+ed4b5ce589a8b282,medium,Male|obesity (≥30)|51–70
+d3dfc39136a29917,medium,Male|overweight (25–29.9)|71+
+8a3f005fa91b2e61,hard,Male|overweight (25–29.9)|31–50
+084fdaa239107d4a,hard,Male|overweight (25–29.9)|51–70
+e5c0f7decb17764f,hard,Male|overweight (25–29.9)|71+
+9aa236fbd9ee3a8c,extreme,Female|normal (18.5–24.9)|71+
+cc75f7c978bdbf50,extreme,Female|normal (18.5–24.9)|31–50
+7372adfc7e912a61,extreme,Female|obesity (≥30)|71+

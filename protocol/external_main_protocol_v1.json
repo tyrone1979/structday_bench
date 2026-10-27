@@ -1,0 +1,46 @@
+{
+  "protocol_id": "external_main_v1",
+  "title": "Structure-Nutrient-GA external main comparison freeze",
+  "external_methods": [
+    "structure_nutrient_ga",
+    "pymoo_ga_bronze",
+    "pymoo_nsga2_bronze",
+    "pymoo_agemoea_bronze",
+    "cpsat_band"
+  ],
+  "ns_ablation_methods": [
+    "structure_nutrient_n1s1",
+    "structure_nutrient_n0s1",
+    "structure_nutrient_n1s0",
+    "structure_nutrient_n0s0"
+  ],
+  "excluded_from_external_ranking": [
+    "v2_quality_recovery",
+    "v2_production",
+    "nutrient_ga"
+  ],
+  "budgets": {
+    "task_seconds": 210,
+    "slot_seconds": 30,
+    "max_days": 7
+  },
+  "ga": {
+    "evidence_population_size": 200,
+    "evidence_observation_mode": "top8_common"
+  },
+  "sampling": {
+    "seed": 202610230,
+    "n_per_difficulty": 6,
+    "difficulties": ["easy", "medium", "hard", "extreme"],
+    "no_solver_screening": true
+  },
+  "paired_seeds": [0, 1, 2],
+  "ga_config_preferred": "config/ga_reconciled_v1.yaml",
+  "ga_config_fallback": "config/ga_multiobj_weights.yaml",
+  "notes": [
+    "Freeze methods/budgets/observation before drawing units.",
+    "Draw excludes prior confirmation/development/pilot IDs; never filters on solver success.",
+    "SCORE and production remain development/system results only.",
+    "Nutrient-GA is an internal bridge, not an external published baseline."
+  ]
+}

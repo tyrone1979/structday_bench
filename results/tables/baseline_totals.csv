@@ -1,0 +1,12 @@
+method,n_tasks,delivered_days,all_band_days,errors,adapter
+RVEA (gen-fraction APD),36,215,120,0,default_confirm
+Aging-SMS,36,212,148,0,default_confirm
+GA,36,211,143,0,default_confirm
+NSGA-III,36,210,141,0,default_confirm
+NSGA-II,36,208,141,0,default_confirm
+R2HCA,36,208,138,0,default_confirm
+AGE-MOEA-II,36,205,141,0,default_confirm
+SMS-EMOA,36,205,133,0,default_confirm
+AGE-MOEA,36,204,141,0,default_confirm
+RVEA (wall-clock APD),36,204,113,0,wall_clock_apd
+CP-SAT-Band,36,88,78,0,default_confirm

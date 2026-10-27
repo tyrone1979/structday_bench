@@ -1,0 +1,93 @@
+{
+  "complete": true,
+  "totals": {
+    "BELEX": {
+      "n": 36,
+      "days": 218,
+      "band": 209,
+      "err": 0
+    },
+    "Aging": {
+      "n": 36,
+      "days": 212,
+      "band": 148,
+      "err": 0
+    },
+    "SMS-EMOA": {
+      "n": 36,
+      "days": 205,
+      "band": 133,
+      "err": 0
+    },
+    "AGE-MOEA-II": {
+      "n": 36,
+      "days": 205,
+      "band": 141,
+      "err": 0
+    },
+    "CP-SAT-Band": {
+      "n": 36,
+      "days": 88,
+      "band": 78,
+      "err": 0
+    },
+    "RVEA": {
+      "n": 36,
+      "days": 215,
+      "band": 120,
+      "err": 0
+    },
+    "NSGA-III": {
+      "n": 36,
+      "days": 210,
+      "band": 141,
+      "err": 0
+    },
+    "AGE-MOEA": {
+      "n": 36,
+      "days": 204,
+      "band": 141,
+      "err": 0
+    },
+    "NSGA-II": {
+      "n": 36,
+      "days": 208,
+      "band": 141,
+      "err": 0
+    },
+    "R2HCA": {
+      "n": 36,
+      "days": 208,
+      "band": 138,
+      "err": 0
+    },
+    "GA": {
+      "n": 36,
+      "days": 211,
+      "band": 143,
+      "err": 0
+    }
+  },
+  "gate_pass": false,
+  "violations": [
+    {
+      "vs": "Aging",
+      "method": "RVEA",
+      "method_tot": {
+        "n": 36,
+        "days": 215,
+        "band": 120,
+        "err": 0
+      },
+      "ref": {
+        "n": 36,
+        "days": 212,
+        "band": 148,
+        "err": 0
+      }
+    }
+  ],
+  "rule": "No external total may lexicographically exceed Aging or BELEX on (days, band).",
+  "n_main": 72,
+  "n_baselines": 324
+}
