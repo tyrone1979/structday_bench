@@ -11,7 +11,7 @@
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 \begin{document}
-\title{MealRec-Bench: A Protocol and Comparative Study for Structure-Conditioned Multi-Day Dietary Optimization from NHANES}
+\title{StructDay-Bench: A Protocol and Comparative Study for Structure-Conditioned Multi-Day Dietary Optimization from NHANES}
 
 \author{Lei~Zhao%
 \thanks{L.~Zhao and J.~Lu contributed equally.}%
@@ -22,7 +22,7 @@
 \thanks{F.~Huang is with Dalian Scientific Test and Control Technology Institute, Dalian, China.}}
 
 \markboth{IEEE Access (preprint draft)}%
-{Zhao \MakeLowercase{\textit{et al.}}: MealRec-Bench}
+{Zhao \MakeLowercase{\textit{et al.}}: StructDay-Bench}
 
 \maketitle
 
@@ -48,7 +48,7 @@ IEEE Access regularly publishes dataset- and protocol-centric contributions that
 We deliberately exclude method papers that introduce new search operators from the claim of this manuscript; those belong in separate venues.
 
 \paragraph{Relation to NutriOpt-Bench / RCFA.}
-A separate experimental survey (NutriOpt-Bench) studies \emph{range-constrained food assembly} under equal evaluation budgets, with Feasible Hit Rate, Friedman ranks, and Kendall~$\tau$ across scale/sparsity/dimension axes. That work targets evolutionary-computation methodology on single-assembly interval boxes. MealRec-Bench is complementary and non-substitutable: it freezes multi-day sequential delivery under wall-clock caps, demographic meal$\times$category envelopes, food-identity nonrepetition across days, and delivery/all-band outcomes. We do not reuse RCFA FHR protocols, recipe-ceiling regimes, or cross-regime $\tau$ claims here.
+A separate experimental survey (NutriOpt-Bench) studies \emph{range-constrained food assembly} under equal evaluation budgets, with Feasible Hit Rate, Friedman ranks, and Kendall~$\tau$ across scale/sparsity/dimension axes. That work targets evolutionary-computation methodology on single-assembly interval boxes. StructDay-Bench is complementary and non-substitutable: it freezes multi-day sequential delivery under wall-clock caps, demographic meal$\times$category envelopes, food-identity nonrepetition across days, and delivery/all-band outcomes. We do not reuse RCFA FHR protocols, recipe-ceiling regimes, or cross-regime $\tau$ claims here.
 
 \section{Related Work}
 Mathematical programming reviews summarize nutrient-only and multi-criteria diet models~\cite{dooren2018,gazan2018}. Menu systems add operational constraints~\cite{seljak2009,benvenuti2020,sahin2024}. Evolutionary multi-objective algorithms---NSGA-II~\cite{deb2002}, NSGA-III~\cite{nsga3}, RVEA~\cite{rvea}, SMS-EMOA~\cite{sms2007}, AGE-MOEA variants~\cite{age1,age2}, and aging-based SMS adaptations~\cite{aging2025}---provide complementary selection pressures. Fair metaheuristic comparison itself is an active topic~\cite{metaheuristics2021}. Benchmark-style Access papers emphasize shared data, metrics, and baselines~\cite{dales2021,cduie2023,nasbenchnlp2022}. Our setting differs through fixed-portion binary genotypes, sequential food-ID bans, and wall-clock multi-day delivery rather than offline hypervolume on synthetic fronts or equal-evaluation FHR surveys of single-day interval assembly.
@@ -146,7 +146,7 @@ Difficulty-stratified patterns (Aging-SMS) show near-ceiling easy/hard day deliv
 A shared protocol changes the interpretation of ``better.'' Day count alone favours generation-fraction RVEA; envelope conformity and wall-clock APD reverse that conclusion relative to Aging-SMS. Benchmark users should therefore publish both delivered and all-band totals, declare APD schedules, and retain failures. Limitations include: no human palatability ratings; no external diet-quality index as a hard gate; structure$\times$target sampling rather than respondent-level hold-out; and adapters that are batch implementations of literature methods, not byte-identical reference codes. Clinical suitability is not claimed~\cite{cdcEthics}.
 
 \section{Conclusion}
-MealRec-Bench documents an NHANES-to-instance pipeline, freezes a confirmatory multi-day protocol, and compares existing algorithms under identical pools and budgets. Aging-SMS is a strong wall-clock baseline on the released panel; fair RVEA accounting matters. We release the manuscript, protocol JSON, and aggregate tables for preprint posting, with IEEE Access submission planned after official template packaging and public code linkage.
+StructDay-Bench documents an NHANES-to-instance pipeline, freezes a confirmatory multi-day protocol, and compares existing algorithms under identical pools and budgets. Aging-SMS is a strong wall-clock baseline on the released panel; fair RVEA accounting matters. We release the manuscript, protocol JSON, and aggregate tables for preprint posting, with IEEE Access submission planned after official template packaging and public code linkage.
 
 \section*{Data and Code Availability}
 NHANES/FNDDS raw files must be obtained from NCHS/USDA. Protocol JSON, panel selection, and aggregate CSVs accompany this repository. Runtime extraction for public release is staged separately. Generated aggregates: CC~BY~4.0.

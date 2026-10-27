@@ -83,4 +83,4 @@ Protocol id: `external_main_v1` / confirmatory panel freeze.
 
 ## Disjoint from NutriOpt-Bench (TEVC)
 
-NutriOpt-Bench/RCFA uses equal evaluation budgets and FHR metrics for single-assembly interval boxes. This pipeline feeds multi-day wall-clock MealRec-Bench instances instead.
+NutriOpt-Bench/RCFA uses equal evaluation budgets and FHR metrics for single-assembly interval boxes. This pipeline feeds multi-day wall-clock StructDay-Bench instances instead.
