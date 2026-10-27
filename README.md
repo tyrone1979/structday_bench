@@ -1,49 +1,30 @@
-# StructDay-Bench: NHANES-derived multi-day dietary optimization benchmark
+# StructDay-Bench
 
-Public benchmark artifact for **structure-conditioned, fixed-portion, multi-day dietary optimization** under a wall-clock protocol.
+Public **benchmark artifacts** for structure-conditioned, fixed-portion, **multi-day** dietary optimization under a wall-clock protocol. **No new algorithm.**
 
-**Intended venue path:** preprint (arXiv / TechRxiv) → **IEEE Access** (benchmark / comparative study; **no new algorithm**).
+Paper / LaTeX / Access template / paper-build scripts are **not** hosted in this GitHub repository. They live in the private research tree on Gitee (`meal-rec-ai`, path `manuscript/structday_bench_access_v1/`).
 
 ## Not the TEVC RCFA survey
 
-Do **not** confuse this repo with [NutriOpt-Bench / nutri-range-opt-survey](https://github.com/tyrone1979/nutri-range-opt-survey/) (IEEE TEVC experimental survey on range-constrained food assembly). That project uses equal evaluation budgets and reports FHR / Friedman / Kendall τ on single-assembly interval boxes. StructDay-Bench instead freezes **multi-day wall-clock** delivery, structure envelopes, and delivered/all-band metrics. Claims and protocols are kept disjoint on purpose.
+Do **not** confuse with [NutriOpt-Bench](https://github.com/tyrone1979/nutri-range-opt-survey/) (equal evaluation budgets; FHR / Friedman / Kendall τ on single-assembly interval boxes). StructDay-Bench freezes multi-day wall-clock delivery, structure envelopes, and delivered / all-band metrics.
 
-## What this repository contains
+## Contents
 
 | Path | Content |
 |------|---------|
-| `manuscript/` | IEEE journal-format LaTeX draft (`main.tex`) + bibliography |
-| `docs/DATA_PIPELINE.md` | NHANES raw XPT → cohort → targets → pools → instances |
 | `protocol/` | Frozen protocol JSON and confirmatory panel selection |
-| `results/` | Aggregated baseline totals (existing algorithms only) |
-| `scripts/` | Helper scripts for tables / PDF build |
+| `results/` | Aggregate baseline tables (existing algorithms only; no new solvers) |
+| `docs/DATA_PIPELINE.md` | NHANES raw XPT → cohort → targets → pools → instances |
+| `data/` | Manifests only (no NHANES/FNDDS redistribution) |
 
-This repository **does not redistributing NHANES/FNDDS raw files**. Obtain upstream data from NCHS/USDA under their terms. Generated evaluation aggregates here use CC BY 4.0 where applicable.
+## Benchmark claim (protocol + comparison)
 
-## Manuscript claim (Access / preprint)
-
-1. Describe how NHANES raw files become optimization **inputs**.
-2. Freeze an evaluation **protocol** (budgets, panel, metrics).
-3. Run **existing** MOEA / GA / CP baselines on the same instances.
+1. NHANES raw files → optimization **inputs** (documented pipeline).
+2. Frozen evaluation **protocol** (budgets, panel, metrics).
+3. **Existing** MOEA / GA / CP baselines on the same instances.
 4. Compare delivered days and all-band conformity; retain failures.
-
-Method papers that introduce new search operators (e.g. BELEX) are **out of scope** for this benchmark manuscript.
-
-## Quick build (preprint PDF)
-
-```bash
-cd manuscript
-pdflatex main.tex && bibtex main && pdflatex main.tex && pdflatex main.tex
-```
-
-Before IEEE Access submission, replace the bundled `IEEEtran.cls` workflow with the official **IEEE Access** LaTeX package from the [IEEE Template Selector](https://template-selector.ieee.org/) (`ieeeaccess.cls` + logo assets). See `manuscript/TEMPLATE_NOTES.md`.
-
-## Upstream implementation
-
-Runtime and export scripts currently live in the research codebase `meal-rec-ai` (private / working tree). This benchmark repo holds the paper-facing protocol, tables, and manuscript. Public code extraction can be linked here when released.
 
 ## License
 
-- Manuscript text: CC BY 4.0 (intended).
-- Aggregated JSON/CSV results: CC BY 4.0.
-- Upstream NHANES / FNDDS: retain NCHS / USDA terms.
+- Aggregate evaluation tables: CC BY 4.0.
+- Upstream NHANES / FNDDS: NCHS / USDA terms (not redistributed here).

@@ -1,3 +1,12 @@
+# Paper / manuscript (GitHub policy: keep off this public repo)
+manuscript/
+ACCESS_latex_template*.zip
+access_official/
+scripts/build_pdf.sh
+docs/PREPRINT_TO_ACCESS.md
+REPO_NOTE.md
+
+# local build debris
 *.aux
 *.bbl
 *.blg
@@ -5,17 +14,7 @@
 *.out
 *.toc
 *.synctex.gz
-*.fdb_latexmk
-*.fls
-manuscript/main.pdf
-.DS_Store
 __pycache__/
 .venv/
 *.pyc
-access_official/
-# local build
-manuscript/*.aux
-manuscript/*.log
-manuscript/*.out
-manuscript/*.pdf
-access_official/
+.DS_Store

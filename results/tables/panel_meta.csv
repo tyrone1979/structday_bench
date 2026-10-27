@@ -1,0 +1,13 @@
+unit,instance_id,difficulty,structure_key,n_pool,gmax,n_target_nutrients
+U01,fbebc1d1bc5c13e8,easy,Male|normal (18.5–24.9)|51–70,7120,2524.315,7
+U02,fca20e2969a39437,easy,Male|obesity (≥30)|31–50,6939,2717.13,7
+U03,3c690b1c40609141,easy,Male|overweight (25–29.9)|71+,7175,2258.8,7
+U04,1fee2001494e90de,medium,Female|obesity (≥30)|71+,7067,2258.8,8
+U05,ed4b5ce589a8b282,medium,Male|obesity (≥30)|51–70,7077,2524.315,8
+U06,d3dfc39136a29917,medium,Male|overweight (25–29.9)|71+,6979,2258.8,9
+U07,8a3f005fa91b2e61,hard,Male|overweight (25–29.9)|31–50,7043,2717.13,9
+U08,084fdaa239107d4a,hard,Male|overweight (25–29.9)|51–70,6944,2524.315,8
+U09,e5c0f7decb17764f,hard,Male|overweight (25–29.9)|71+,6876,2258.8,9
+U10,9aa236fbd9ee3a8c,extreme,Female|normal (18.5–24.9)|71+,6999,2258.8,13
+U11,cc75f7c978bdbf50,extreme,Female|normal (18.5–24.9)|31–50,7417,2340.19,10
+U12,7372adfc7e912a61,extreme,Female|obesity (≥30)|71+,7380,2258.8,10
