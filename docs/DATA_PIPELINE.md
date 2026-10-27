@@ -56,6 +56,10 @@ For each structure×target unit:
 
 Frozen instance snapshot: pool rows + personal envelopes + target + mass cap `G_max`.
 
+This repository ships the **12 confirmatory frozen pools** under `data/instances/pools/<instance_id>/` (`pool.pkl`, `meta.json`, `personal.json`; ~30 MB total). Raw NHANES/FNDDS XPT files are not redistributed.
+
+Reproduce / rerun: `scripts/verify_data.py`, `scripts/install_pools.py`, `scripts/build_job_plan.py`, `scripts/run_benchmark.py` (requires a `meal-rec-ai` runtime checkout).
+
 ## 5. Confirmatory panel sampling
 
 Protocol id: `external_main_v1` / confirmatory panel freeze.

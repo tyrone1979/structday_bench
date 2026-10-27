@@ -1,0 +1,115 @@
+{
+  "stage": "confirmatory_panel_not_final_paper_ranking",
+  "sample_seed": 2026102612,
+  "n_per_difficulty": 3,
+  "unit": "structure x target, not participant holdout",
+  "no_solver_screening": true,
+  "prior_exposed_ids_excluded": 150,
+  "eligible_after_exclusion": 7831,
+  "code_sha256": {
+    "dmp4p_runtime/algorithms/sms_exact_exchange.py": "daed7b20cb390c157d653ec535a825275287b9a48468bb57e5d2e28739d4528b",
+    "dmp4p_runtime/algorithms/pymoo_bronze.py": "7cddfe09070509e17a610d4d90e95d6fb8e51d9e48358bddc241d726f829fbb2",
+    "dmp4p_runtime/factory.py": "d9a024395b208f8eba10a6ade1b9e9a812697f9ea10410d30afe32c428700db5"
+  },
+  "frozen_dev_runner_sha256": "94efde320005a35d8e4e20d4bf58bb4d182dd584720d99b272a29604bc0b52fd",
+  "rows": [
+    {
+      "instance_id": "fbebc1d1bc5c13e8",
+      "structure_key": "Male|normal (18.5–24.9)|51–70",
+      "difficulty": "easy",
+      "canonical": "Male|normal (18.5–24.9)|51–70|{\"calorie\":[1800,2500],\"carb\":[250,400],\"cholesterol\":[0,200],\"fiber\":[31,9999999.0],\"protein\":[50,200],\"saturated_fat\":[0,15],\"sugar\":[0,36]}"
+    },
+    {
+      "instance_id": "fca20e2969a39437",
+      "structure_key": "Male|obesity (≥30)|31–50",
+      "difficulty": "easy",
+      "canonical": "Male|obesity (≥30)|31–50|{\"calorie\":[1500,3400],\"carb\":[300,500],\"cholesterol\":[0,300],\"fiber\":[38,9999999.0],\"protein\":[0,90],\"saturated_fat\":[0,20],\"sugar\":[0,36]}"
+    },
+    {
+      "instance_id": "3c690b1c40609141",
+      "structure_key": "Male|overweight (25–29.9)|71+",
+      "difficulty": "easy",
+      "canonical": "Male|overweight (25–29.9)|71+|{\"calorie\":[1500,2600],\"carb\":[250,400],\"cholesterol\":[0,300],\"fiber\":[31,9999999.0],\"protein\":[60,200],\"saturated_fat\":[0,15],\"sugar\":[0,36]}"
+    },
+    {
+      "instance_id": "1fee2001494e90de",
+      "structure_key": "Female|obesity (≥30)|71+",
+      "difficulty": "medium",
+      "canonical": "Female|obesity (≥30)|71+|{\"calorie\":[2100,3000],\"carb\":[300,450],\"cholesterol\":[0,300],\"fiber\":[25,9999999.0],\"protein\":[130,240],\"saturated_fat\":[0,35],\"sodium\":[0,1500],\"sugar\":[0,25]}"
+    },
+    {
+      "instance_id": "ed4b5ce589a8b282",
+      "structure_key": "Male|obesity (≥30)|51–70",
+      "difficulty": "medium",
+      "canonical": "Male|obesity (≥30)|51–70|{\"calorie\":[2100,2900],\"carb\":[250,450],\"cholesterol\":[0,300],\"fiber\":[31,9999999.0],\"protein\":[0,70],\"saturated_fat\":[0,30],\"sodium\":[0,1500],\"sugar\":[0,36]}"
+    },
+    {
+      "instance_id": "d3dfc39136a29917",
+      "structure_key": "Male|overweight (25–29.9)|71+",
+      "difficulty": "medium",
+      "canonical": "Male|overweight (25–29.9)|71+|{\"calorie\":[1900,3500],\"carb\":[350,550],\"cholesterol\":[0,300],\"fiber\":[31,9999999.0],\"potassium\":[3400,9999999.0],\"protein\":[70,280],\"saturated_fat\":[0,40],\"sodium\":[0,1500],\"sugar\":[0,36]}"
+    },
+    {
+      "instance_id": "8a3f005fa91b2e61",
+      "structure_key": "Male|overweight (25–29.9)|31–50",
+      "difficulty": "hard",
+      "canonical": "Male|overweight (25–29.9)|31–50|{\"calorie\":[2200,3100],\"carb\":[300,500],\"cholesterol\":[0,300],\"fiber\":[38,9999999.0],\"potassium\":[3400,9999999.0],\"protein\":[70,250],\"saturated_fat\":[0,20],\"sodium\":[0,1500],\"sugar\":[0,70]}"
+    },
+    {
+      "instance_id": "084fdaa239107d4a",
+      "structure_key": "Male|overweight (25–29.9)|51–70",
+      "difficulty": "hard",
+      "canonical": "Male|overweight (25–29.9)|51–70|{\"calorie\":[1500,3100],\"carb\":[0,450],\"cholesterol\":[0,200],\"fiber\":[31,9999999.0],\"protein\":[80,250],\"saturated_fat\":[0,20],\"sodium\":[0,1500],\"sugar\":[0,36]}"
+    },
+    {
+      "instance_id": "e5c0f7decb17764f",
+      "structure_key": "Male|overweight (25–29.9)|71+",
+      "difficulty": "hard",
+      "canonical": "Male|overweight (25–29.9)|71+|{\"calorie\":[1500,2700],\"carb\":[0,400],\"cholesterol\":[0,300],\"fiber\":[31,9999999.0],\"potassium\":[3400,9999999.0],\"protein\":[0,70],\"saturated_fat\":[0,20],\"sodium\":[0,1500],\"sugar\":[0,36]}"
+    },
+    {
+      "instance_id": "9aa236fbd9ee3a8c",
+      "structure_key": "Female|normal (18.5–24.9)|71+",
+      "difficulty": "extreme",
+      "canonical": "Female|normal (18.5–24.9)|71+|{\"calorie\":[1300,2000],\"carb\":[150,300],\"cholesterol\":[0,300],\"fiber\":[25,9999999.0],\"folic_acid\":[400,1000],\"iron\":[8,45],\"potassium\":[2600,9999999.0],\"protein\":[0,50],\"saturated_fat\":[0,20],\"sodium\":[0,1500],\"sugar\":[0,45],\"vitamin_b12\":[2.4,9999999.0],\"vitamin_c\":[75,2000]}"
+    },
+    {
+      "instance_id": "cc75f7c978bdbf50",
+      "structure_key": "Female|normal (18.5–24.9)|31–50",
+      "difficulty": "extreme",
+      "canonical": "Female|normal (18.5–24.9)|31–50|{\"calcium\":[1200,2500],\"calorie\":[1500,2000],\"carb\":[150,300],\"cholesterol\":[0,300],\"fiber\":[25,9999999.0],\"protein\":[50,160],\"saturated_fat\":[0,20],\"sugar\":[0,45],\"vitamin_c\":[75,2000],\"vitamin_d\":[15,100]}"
+    },
+    {
+      "instance_id": "7372adfc7e912a61",
+      "structure_key": "Female|obesity (≥30)|71+",
+      "difficulty": "extreme",
+      "canonical": "Female|obesity (≥30)|71+|{\"calcium\":[1200,2000],\"calorie\":[1200,2100],\"carb\":[200,350],\"cholesterol\":[0,300],\"fiber\":[25,9999999.0],\"protein\":[0,60],\"saturated_fat\":[0,15],\"sugar\":[0,25],\"vitamin_c\":[75,2000],\"vitamin_d\":[20,100]}"
+    }
+  ],
+  "primary_order": [
+    "seven-day delivery",
+    "all-band days"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "budget": [
+    210.0,
+    30.0,
+    7
+  ],
+  "methods": [
+    "corrected_aging",
+    "exact_exchange_v3"
+  ],
+  "method_keys": {
+    "corrected_aging": "pymoo_sms_aging_bronze",
+    "exact_exchange": "pymoo_sms_exact_exchange_bronze"
+  },
+  "new_constraints": false,
+  "production_defaults_changed": false,
+  "paper_name": "BELEX",
+  "paper_name_expansion": "Bounded Exact Local EXchange"
+}

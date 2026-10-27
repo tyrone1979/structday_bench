@@ -1,0 +1,70 @@
+{
+  "stage": "confirmatory_aging_vs_belex_complete",
+  "aging": {
+    "n": 36,
+    "days": 212,
+    "band": 148,
+    "err": 0
+  },
+  "belex": {
+    "n": 36,
+    "days": 218,
+    "band": 209,
+    "err": 0
+  },
+  "paired": 36,
+  "delta_days": 6,
+  "delta_band": 61,
+  "by_difficulty": {
+    "easy": {
+      "Aging": {
+        "n": 9,
+        "d": 63,
+        "b": 59
+      },
+      "BELEX": {
+        "n": 9,
+        "d": 63,
+        "b": 63
+      }
+    },
+    "medium": {
+      "Aging": {
+        "n": 9,
+        "d": 31,
+        "b": 13
+      },
+      "BELEX": {
+        "n": 9,
+        "d": 37,
+        "b": 28
+      }
+    },
+    "hard": {
+      "Aging": {
+        "n": 9,
+        "d": 63,
+        "b": 40
+      },
+      "BELEX": {
+        "n": 9,
+        "d": 63,
+        "b": 63
+      }
+    },
+    "extreme": {
+      "Aging": {
+        "n": 9,
+        "d": 55,
+        "b": 36
+      },
+      "BELEX": {
+        "n": 9,
+        "d": 55,
+        "b": 55
+      }
+    }
+  },
+  "program_errors": 0,
+  "finished_unix": 1792997327.192214
+}

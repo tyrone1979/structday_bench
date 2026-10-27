@@ -6,7 +6,7 @@ scripts/build_pdf.sh
 docs/PREPRINT_TO_ACCESS.md
 REPO_NOTE.md
 
-# local build debris
+# local build debris / local reruns
 *.aux
 *.bbl
 *.blg
@@ -18,3 +18,4 @@ __pycache__/
 .venv/
 *.pyc
 .DS_Store
+outputs/
