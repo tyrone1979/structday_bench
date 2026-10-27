@@ -4,10 +4,6 @@ Public **benchmark artifacts** for structure-conditioned, fixed-portion, **multi
 
 Paper / LaTeX / Access template / paper-build scripts are **not** hosted in this GitHub repository. They live in the private research tree on Gitee (`meal-rec-ai`, path `manuscript/structday_bench_access_v1/`).
 
-## Not the TEVC RCFA survey
-
-Do **not** confuse with [NutriOpt-Bench](https://github.com/tyrone1979/nutri-range-opt-survey/) (equal evaluation budgets; FHR / Friedman / Kendall τ on single-assembly interval boxes). StructDay-Bench freezes multi-day wall-clock delivery, structure envelopes, and delivered / all-band metrics.
-
 ## Contents
 
 | Path | Content |
