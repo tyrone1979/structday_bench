@@ -80,7 +80,3 @@ Protocol id: `external_main_v1` / confirmatory panel freeze.
 - **Delivered days:** independently float64-validated plans admitted under BLD minima and deadline.
 - **All-band days:** delivered days with no soft category upper-envelope violation (effective lowers were zero on this panel).
 - Lexicographic method comparison uses totals over the fixed 36 tasks (12×3), failures kept in denominators.
-
-## Disjoint from NutriOpt-Bench (TEVC)
-
-NutriOpt-Bench/RCFA uses equal evaluation budgets and FHR metrics for single-assembly interval boxes. This pipeline feeds multi-day wall-clock StructDay-Bench instances instead.
