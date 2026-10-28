@@ -53,6 +53,29 @@ are hardware-dependent and must not be substituted for the reported ledger.
 
 ## Published results
 
+### Numerical audit (29 October 2026)
+
+The frozen logs contain 396 runs: 360 primary baseline runs and 36
+generation-fraction RVEA diagnostic runs. Independent reconstruction verified
+all 2,170 committed days (1,955 primary and 215 diagnostic) against the shared
+hard gate, meal floors, and cross-day food-ID exclusion. Compact records with
+selected candidate IDs are released in results/committed_plans.json.gz.
+
+The audit corrected the wall-clock RVEA time column: 12 incomplete tasks had
+missing wall time, and the other 24 rows held time to the seventh day rather
+than final task wall time. The corrected mean task wall time is 180.2 s.
+Delivered-day and all-band counts are unchanged.
+
+The conformity intervals now resample all 12 units, including zero-delivery
+units. They are descriptive unit-bootstrap intervals, not paired significance
+tests.
+
+The verified ban-coverage table counts removed candidate rows rather than
+dividing food-ID counts by row counts. After seven commitments, the 220
+complete primary tasks had removed 20.3–55.1% of initial candidate rows
+(median 35.2%). These conditional measurements do not isolate the causal
+effect of the ban. Details are in results/audit/final_consistency_audit.json.
+
 Aggregate tables under `results/tables/` (no new solvers):
 
 - `method_summary_noblex.csv` — method totals (days / all-band / ge7)

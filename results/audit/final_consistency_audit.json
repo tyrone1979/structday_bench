@@ -1,0 +1,212 @@
+{
+  "n_runs": 396,
+  "n_primary_runs": 360,
+  "n_diagnostic_runs": 36,
+  "totals": {
+    "Aging-SMS": {
+      "days": 212,
+      "band": 148,
+      "ge7": 24,
+      "all7band": 6,
+      "mean_wall": 186.91778419995939,
+      "zero_day": 2
+    },
+    "SMS-EMOA": {
+      "days": 205,
+      "band": 133,
+      "ge7": 23,
+      "all7band": 5,
+      "mean_wall": 181.88086593113582,
+      "zero_day": 1
+    },
+    "AGE-MOEA": {
+      "days": 204,
+      "band": 141,
+      "ge7": 23,
+      "all7band": 4,
+      "mean_wall": 181.0808738338399,
+      "zero_day": 1
+    },
+    "NSGA-III": {
+      "days": 210,
+      "band": 141,
+      "ge7": 24,
+      "all7band": 8,
+      "mean_wall": 185.27471272714644,
+      "zero_day": 1
+    },
+    "CP-SAT-Band": {
+      "days": 88,
+      "band": 78,
+      "ge7": 8,
+      "all7band": 5,
+      "mean_wall": 74.97242281411309,
+      "zero_day": 17
+    },
+    "GA": {
+      "days": 211,
+      "band": 143,
+      "ge7": 23,
+      "all7band": 3,
+      "mean_wall": 186.88899610399838,
+      "zero_day": 0
+    },
+    "R2HCA": {
+      "days": 208,
+      "band": 138,
+      "ge7": 24,
+      "all7band": 6,
+      "mean_wall": 183.66478042001836,
+      "zero_day": 1
+    },
+    "RVEA (gen-frac APD)": {
+      "days": 215,
+      "band": 120,
+      "ge7": 24,
+      "all7band": 3,
+      "mean_wall": 189.404721257044,
+      "zero_day": 1
+    },
+    "NSGA-II": {
+      "days": 208,
+      "band": 141,
+      "ge7": 24,
+      "all7band": 6,
+      "mean_wall": 183.6212145704388,
+      "zero_day": 1
+    },
+    "AGE-MOEA-II": {
+      "days": 205,
+      "band": 141,
+      "ge7": 23,
+      "all7band": 4,
+      "mean_wall": 181.9419232050552,
+      "zero_day": 1
+    },
+    "RVEA (wall-clock APD)": {
+      "days": 204,
+      "band": 113,
+      "ge7": 24,
+      "all7band": 2,
+      "mean_wall": 180.22024332230083,
+      "zero_day": 1
+    }
+  },
+  "pools": [
+    {
+      "instance_id": "fbebc1d1bc5c13e8",
+      "n_rows": 7120,
+      "n_food_ids": 1808,
+      "max_rows_per_id": 465,
+      "n_nutrients": 7,
+      "max_daily_g": 2524.315,
+      "positive_effective_lowers": []
+    },
+    {
+      "instance_id": "fca20e2969a39437",
+      "n_rows": 6939,
+      "n_food_ids": 1764,
+      "max_rows_per_id": 472,
+      "n_nutrients": 7,
+      "max_daily_g": 2717.13,
+      "positive_effective_lowers": []
+    },
+    {
+      "instance_id": "3c690b1c40609141",
+      "n_rows": 7175,
+      "n_food_ids": 1848,
+      "max_rows_per_id": 471,
+      "n_nutrients": 7,
+      "max_daily_g": 2258.8,
+      "positive_effective_lowers": []
+    },
+    {
+      "instance_id": "1fee2001494e90de",
+      "n_rows": 7067,
+      "n_food_ids": 1789,
+      "max_rows_per_id": 479,
+      "n_nutrients": 8,
+      "max_daily_g": 2258.8,
+      "positive_effective_lowers": []
+    },
+    {
+      "instance_id": "ed4b5ce589a8b282",
+      "n_rows": 7077,
+      "n_food_ids": 1745,
+      "max_rows_per_id": 483,
+      "n_nutrients": 8,
+      "max_daily_g": 2524.315,
+      "positive_effective_lowers": []
+    },
+    {
+      "instance_id": "d3dfc39136a29917",
+      "n_rows": 6979,
+      "n_food_ids": 992,
+      "max_rows_per_id": 527,
+      "n_nutrients": 9,
+      "max_daily_g": 2258.8,
+      "positive_effective_lowers": []
+    },
+    {
+      "instance_id": "8a3f005fa91b2e61",
+      "n_rows": 7043,
+      "n_food_ids": 1030,
+      "max_rows_per_id": 570,
+      "n_nutrients": 9,
+      "max_daily_g": 2717.13,
+      "positive_effective_lowers": []
+    },
+    {
+      "instance_id": "084fdaa239107d4a",
+      "n_rows": 6944,
+      "n_food_ids": 1753,
+      "max_rows_per_id": 478,
+      "n_nutrients": 8,
+      "max_daily_g": 2524.315,
+      "positive_effective_lowers": []
+    },
+    {
+      "instance_id": "e5c0f7decb17764f",
+      "n_rows": 6876,
+      "n_food_ids": 909,
+      "max_rows_per_id": 525,
+      "n_nutrients": 9,
+      "max_daily_g": 2258.8,
+      "positive_effective_lowers": []
+    },
+    {
+      "instance_id": "9aa236fbd9ee3a8c",
+      "n_rows": 6999,
+      "n_food_ids": 1073,
+      "max_rows_per_id": 555,
+      "n_nutrients": 13,
+      "max_daily_g": 2258.8,
+      "positive_effective_lowers": []
+    },
+    {
+      "instance_id": "cc75f7c978bdbf50",
+      "n_rows": 7417,
+      "n_food_ids": 1913,
+      "max_rows_per_id": 476,
+      "n_nutrients": 10,
+      "max_daily_g": 2340.19,
+      "positive_effective_lowers": []
+    },
+    {
+      "instance_id": "7372adfc7e912a61",
+      "n_rows": 7380,
+      "n_food_ids": 1864,
+      "max_rows_per_id": 464,
+      "n_nutrients": 10,
+      "max_daily_g": 2258.8,
+      "positive_effective_lowers": []
+    }
+  ],
+  "recovered_wall_entries": 12,
+  "verified_days": 2170,
+  "full_primary_plans": 220,
+  "ban_rows_min": 0.20305214073760067,
+  "ban_rows_max": 0.5506176345307398,
+  "ban_rows_median": 0.35199596483643175,
+  "scope": "Recalculation from released run-level CSV and frozen snapshots; no solver reruns."
+}
