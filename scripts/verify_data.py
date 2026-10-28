@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Verify confirmatory pool directories match protocol/selection.json."""
+"""Verify confirmatory pool directories match data/instances/manifest.csv."""
 from __future__ import annotations
 
 import json
+import csv
 import sys
 from pathlib import Path
 
@@ -10,8 +11,8 @@ REPO = Path(__file__).resolve().parents[1]
 
 
 def main() -> int:
-    sel = json.loads((REPO / "protocol" / "selection.json").read_text(encoding="utf-8"))
-    ids = [r["instance_id"] for r in sel["rows"]]
+    with (REPO / "data" / "instances" / "manifest.csv").open(encoding="utf-8-sig", newline="") as stream:
+        ids = [r["instance_id"] for r in csv.DictReader(stream)]
     pools = REPO / "data" / "instances" / "pools"
     missing = []
     ok = []

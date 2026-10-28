@@ -1,0 +1,8 @@
+{
+  "source": "Frozen wall-clock RVEA recheck, gpu0/freeze.json",
+  "source_git_head_at_audit": "b6c3de33ab4b10bec632d42f725d6f6acfcc1a19",
+  "wall_clock_module_sha256": "bedec7659d32a41dc366ecf5ee38cd812a30176254a6c976a3be5f44b79a2db8",
+  "original_adapter_file_sha256": "11034984770c5d093d5a5c2e99f571ee6cb4fc04cba4fc03057f8593e34a2ed2",
+  "audit": "Both remote files matched their frozen experiment hashes. Public adapter retains the RVEA construction and clock diagnostics, with unrelated research methods removed.",
+  "pymoo_version": "0.6.2"
+}

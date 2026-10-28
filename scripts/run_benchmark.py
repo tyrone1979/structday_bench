@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Run the StructDay-Bench confirmatory panel via meal-rec-ai dmp4p_runtime.batch.
+"""Run the released StructDay-Bench confirmatory panel.
 
-Requires a local meal-rec-ai checkout with solvers installed (pymoo, torch/CUDA
-optional depending on methods). This repo ships frozen pools + protocol only.
+The repository contains the frozen pools, released baseline adapters, and the
+independent evaluation runtime.  CUDA is optional; timing is recorded for the
+selected device.
 """
 from __future__ import annotations
 
@@ -18,12 +19,6 @@ REPO = Path(__file__).resolve().parents[1]
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
-        "--runtime-root",
-        type=Path,
-        default=Path(os.environ.get("MEAL_REC_AI_ROOT", "")),
-        help="meal-rec-ai checkout (or set MEAL_REC_AI_ROOT)",
-    )
-    ap.add_argument(
         "--out",
         type=Path,
         default=REPO / "outputs" / "confirm_rerun",
@@ -32,7 +27,7 @@ def main() -> int:
     ap.add_argument(
         "--plan",
         type=Path,
-        default=REPO / "protocol" / "job_plan.json",
+        default=REPO / "outputs" / "job_plan.json",
         help="Job plan JSON (built if missing)",
     )
     ap.add_argument("--methods", default=None, help="Override methods CSV for plan build")
@@ -40,29 +35,19 @@ def main() -> int:
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--resume", action="store_true")
-    ap.add_argument("--skip-install", action="store_true")
-    ap.add_argument("--force-install", action="store_true")
     args = ap.parse_args()
 
-    root = args.runtime_root.resolve() if str(args.runtime_root) else Path()
-    if not root or not (root / "dmp4p_runtime" / "batch.py").is_file():
-        raise SystemExit(
-            "Pass --runtime-root /path/to/meal-rec-ai or set MEAL_REC_AI_ROOT"
-        )
+    root = REPO
+    if not (root / "dmp4p_runtime" / "batch.py").is_file():
+        raise SystemExit("Released runtime is missing dmp4p_runtime/batch.py")
 
     py = sys.executable
-    if not args.skip_install:
-        cmd = [py, str(REPO / "scripts" / "install_pools.py"), "--runtime-root", str(root)]
-        if args.force_install:
-            cmd.append("--force")
-        subprocess.check_call(cmd)
-
     if not args.plan.is_file() or args.methods:
         build = [
             py,
             str(REPO / "scripts" / "build_job_plan.py"),
             "--selection",
-            str(REPO / "protocol" / "selection.json"),
+            str(REPO / "data" / "instances" / "manifest.csv"),
             "--seeds",
             args.seeds,
             "--device",

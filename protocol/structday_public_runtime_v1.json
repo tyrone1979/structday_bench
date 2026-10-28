@@ -1,0 +1,12 @@
+{
+  "protocol_id": "structday_public_runtime_v1",
+  "panel_manifest": "data/instances/manifest.csv",
+  "task_seconds": 210,
+  "slot_seconds": 30,
+  "max_days": 7,
+  "paired_seeds": [0, 1, 2],
+  "population_size": 200,
+  "observation_mode": "top8_common",
+  "runtime_status": "Ten primary adapters packaged, including frozen-source wall-clock RVEA.",
+  "results_status": "Stored paper results unchanged; reruns create a new ledger."
+}

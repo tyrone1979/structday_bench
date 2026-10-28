@@ -1,0 +1,17 @@
+name: Public runtime validation
+on: [push, pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy==2.0.2 pandas==2.2.3 PyYAML==6.0.2 scipy==1.16.2 scikit-learn==1.7.2 pymoo==0.6.2 ortools==9.15.6755 pyarrow==18.1.0 pytest
+      - run: pip install torch==2.9.0 --index-url https://download.pytorch.org/whl/cpu
+      - run: python scripts/verify_data.py
+      - run: python -c "from dmp4p_runtime.factory import SUPPORTED_METHODS; print(SUPPORTED_METHODS)"
+      - run: python scripts/run_benchmark.py --device cpu --dry-run
+      - run: python -m pytest tests/test_rvea_wallclock_progress.py -q
+      - run: python scripts/smoke_runtime.py

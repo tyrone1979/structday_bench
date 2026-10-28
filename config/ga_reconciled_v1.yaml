@@ -156,10 +156,10 @@ pool:
     explore_frac: 0.05
     pool_retries: 0
 paths:
-  structure_overall: outputs/nhanes_release_reconciled_1720_v1/operability/table_structure_overall.csv
-  structure_by_sex: outputs/nhanes_release_reconciled_1720_v1/operability/table_structure_by_sex.csv
-  structure_by_bmi: outputs/nhanes_release_reconciled_1720_v1/operability/table_structure_by_bmi.csv
-  structure_by_age: outputs/nhanes_release_reconciled_1720_v1/operability/table_structure_by_age.csv
-  structure_by_sex_bmi: outputs/nhanes_release_reconciled_1720_v1/operability/table_structure_by_sex_bmi.csv
-  food_frequency: outputs/nhanes_release_reconciled_1720_v1/operability/table_food_frequency.csv
+  structure_overall: data/priors/table_structure_overall.csv
+  structure_by_sex: data/priors/table_structure_by_sex.csv
+  structure_by_bmi: data/priors/table_structure_by_bmi.csv
+  structure_by_age: data/priors/table_structure_by_age.csv
+  structure_by_sex_bmi: data/priors/table_structure_by_sex_bmi.csv
+  food_frequency: data/priors/table_food_frequency.csv
   structure_learn_config: config/structure_learn_reconciled_v1.yaml

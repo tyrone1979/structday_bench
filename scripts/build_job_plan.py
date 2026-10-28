@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Build a StructDay-Bench confirmatory job plan (JSON) from protocol + instance list.
 
-Snapshot paths are written relative to --runtime-root (meal-rec-ai checkout),
-where pools are installed under:
-  outputs/bronze_search_bench/instances/aging_exact_confirm_v1/pools/<id>/
+Snapshot paths are written relative to the repository root.  The frozen pools
+are distributed directly under data/instances/pools/<id>/.
 """
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 from pathlib import Path
 
@@ -23,7 +23,6 @@ METHODS = {
     "agemoea": "pymoo_agemoea_bronze",
     "agemoea2": "pymoo_agemoea2_bronze",
     "rvea": "pymoo_rvea_bronze",
-    "rvea_wallclock": "pymoo_rvea_wallclock_bronze",
     "ga": "pymoo_ga_bronze",
     "cpsat_band": "cpsat_band",
 }
@@ -47,7 +46,7 @@ def main() -> int:
     ap.add_argument(
         "--selection",
         type=Path,
-        default=REPO / "protocol" / "selection.json",
+        default=REPO / "data" / "instances" / "manifest.csv",
     )
     ap.add_argument(
         "--methods",
@@ -61,19 +60,19 @@ def main() -> int:
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument(
         "--snapshot-prefix",
-        default="outputs/bronze_search_bench/instances/aging_exact_confirm_v1/pools",
-        help="Path prefix relative to meal-rec-ai runtime root",
+        default="data/instances/pools",
+        help="Path prefix relative to this repository root",
     )
     ap.add_argument(
         "--ga-config",
         default="config/ga_reconciled_v1.yaml",
-        help="GA YAML relative to runtime root (copy from this repo's config/ if needed)",
+        help="GA YAML relative to this repository root",
     )
     ap.add_argument("-o", "--out", type=Path, required=True)
     args = ap.parse_args()
 
-    sel = json.loads(args.selection.read_text(encoding="utf-8"))
-    rows = sel["rows"]
+    with args.selection.open(encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
     seeds = [int(x) for x in args.seeds.split(",") if x.strip() != ""]
     method_labels = [m.strip() for m in args.methods.split(",") if m.strip()]
     for m in method_labels:
@@ -100,7 +99,7 @@ def main() -> int:
 
     plan = {
         "phase": "structday_bench_confirmatory",
-        "protocol_id": "external_main_v1",
+        "protocol_id": "structday_public_runtime_v1",
         "ga_config": args.ga_config,
         "task_seconds": args.task_seconds,
         "slot_seconds": args.slot_seconds,
